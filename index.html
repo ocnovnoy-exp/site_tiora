@@ -16,19 +16,20 @@
 
   <header class="site-header" id="top">
     <div class="container header-inner">
-      <div class="brand">
+      <a class="brand" href="#hero" aria-label="TIORA — перейти к началу страницы">
         <div class="brand-mark" aria-hidden="true"></div>
         <div class="brand-name">TIORA</div>
-      </div>
+      </a>
       <nav class="nav" aria-label="Основная навигация">
         <a href="#hero">Решение</a>
         <a href="#segments">Сегменты</a>
-        <a href="#specs">Теххарактеристики</a>
+        <a href="#specs">Характеристики</a>
         <a href="#implementation">Внедрение</a>
         <a href="#software">ПО</a>
         <a href="#economics">Экономика</a>
         <a href="#service">Сервис</a>
         <a href="#faq">FAQ</a>
+        <a href="#company">О компании</a>
       </nav>
       <div class="header-actions">
         <a class="phone" href="tel:88000888888">8 800 088 88 88</a>
@@ -49,18 +50,15 @@
             <a class="btn btn-secondary" href="#specs">Скачать даташит</a>
           </div>
           <p class="helper">Подготовим сценарий демо под ваши платы и компоненты.</p>
-          <ul class="kpi-list">
-            <li><span>Производительность</span><strong>[уточнить]</strong></li>
-            <li><span>Точность установки</span><strong>[уточнить]</strong></li>
-            <li><span>Диапазон компонентов</span><strong>[уточнить]</strong></li>
-            <li><span>Форматы данных</span><strong>[уточнить]</strong></li>
-            <li><span>Срок поставки</span><strong>стандартный для класса, уточняется в КП</strong></li>
-          </ul>
         </div>
-        <div class="hero-visual" role="img" aria-label="3D-визуализация настольного SMD-расстановщика TIORA">
+        <div class="hero-visual" role="img" aria-label="Логотип TIORA в первом экране сайта">
           <div class="visual-frame">
-            <img src="assets/machine-placeholder.svg" alt="Стандартное изображение оборудования TIORA" loading="lazy" />
-            <div class="visual-sub">Стандартное изображение. Заменить на фото или 3D-рендер.</div>
+            <div class="hero-logo-lockup" aria-hidden="true">
+              <div class="hero-logo-mark"></div>
+              <div class="hero-logo-word">TIORA</div>
+            </div>
+            <div class="visual-label">Инженерные решения для SMT-производства</div>
+            <div class="visual-sub">Правый блок первого экрана переведен под логотип. При необходимости можно заменить его на фирменный SVG или композицию из брендбука.</div>
           </div>
         </div>
       </div>
@@ -138,7 +136,7 @@
     <section class="section" id="specs" aria-labelledby="specs-title">
       <div class="container">
         <div class="section-head">
-          <h2 id="specs-title">Технические характеристики</h2>
+          <h2 id="specs-title">Характеристики</h2>
           <p>Полный даташит доступен по запросу. Значения подтверждаются под вашу задачу.</p>
         </div>
         <div class="table-wrap">
@@ -439,6 +437,29 @@
       </div>
     </section>
 
+    <section class="section alt" id="company" aria-labelledby="company-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="company-title">О компании</h2>
+          <p>TIORA разрабатывает решения для автоматизации SMT-производства с фокусом на инженерную точность, предсказуемость внедрения и техническое сопровождение после запуска.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>Инженерный подход</h3>
+            <p>Прорабатываем задачу на уровне компонентов, сценариев сборки, ограничений линии и требований к качеству.</p>
+          </article>
+          <article class="card">
+            <h3>Прозрачная спецификация</h3>
+            <p>Фиксируем реальные параметры, ограничения и условия применения без перегруженных маркетинговых формулировок.</p>
+          </article>
+          <article class="card">
+            <h3>Поддержка внедрения</h3>
+            <p>Помогаем с пилотом, обучением команды, регламентами эксплуатации и удаленной диагностикой после поставки.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section cta" id="contact" aria-labelledby="contact-title">
       <div class="container">
         <div class="cta-head">
@@ -548,7 +569,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <div class="brand-name">TIORA</div>
+        <a class="brand-name footer-brand-link" href="#hero">TIORA</a>
         <p>Настольные SMD‑расстановщики для серийной сборки и R&D.</p>
       </div>
       <div>
