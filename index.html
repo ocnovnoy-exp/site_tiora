@@ -1,399 +1,1453 @@
-﻿<section class="section alt" id="benefits" aria-labelledby="benefits-title">
-  <div class="container">
-    <h2 id="benefits-title">Почему TIORA</h2>
-    <div class="benefits">
-      <div class="benefit">
-        <h3>Высокая скорость</h3>
-        <p>Производительность достигает 1580 CPH благодаря обновленному драйверу оси Y.</p>
-      </div>
-      <div class="benefit">
-        <h3>Высокоточная оптика</h3>
-        <p>Две камеры (верхняя и нижняя) для центровки компонентов от 0402, IC 0.4 мм и BGA 0.5 мм.</p>
-      </div>
-      <div class="benefit">
-        <h3>Масштабируемость питателей</h3>
-        <p>Рабочая зона вмещает до 50 автоматических 8 мм и 12 мм фидеров, а также поддерживает ленточные (strip) питатели.</p>
-      </div>
-      <div class="benefit">
-        <h3>Открытая экосистема</h3>
-        <p>Работает под управлением ПО OpenPnP 2.6, кастомная плата на базе STM32F407VET6.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LumenPnP v4 — Настольный SMD-расстановщик | TIORA</title>
+  <meta name="description" content="LumenPnP v4: настольный SMD-расстановщик со скоростью до 1580 CPH, улучшенной оптикой и поддержкой OpenPnP для серийной сборки электроники." />
+  <meta property="og:title" content="LumenPnP v4 — Настольный SMD-расстановщик" />
+  <meta property="og:description" content="Скорость до 1580 CPH, две камеры для точной центровки, вместимость до 50 питателей. Инженерная точность и открытая экосистема." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0b6ef5" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --bg-alt: #eef2f7;
+      --surface: #ffffff;
+      --surface-elevated: #f9fbfd;
+      --text: #0f1720;
+      --muted: #4b5a6b;
+      --line: #d6dde6;
+      --accent: #0b6ef5;
+      --accent-2: #12a57b;
+      --accent-dark: #084bb0;
+      --warning: #b45309;
+      --success: #0f9d58;
+      --shadow: 0 18px 50px rgba(15, 23, 32, 0.08);
+      --radius: 16px;
+      --radius-sm: 10px;
+      --container: 1200px;
+      --space-1: 8px;
+      --space-2: 12px;
+      --space-3: 16px;
+      --space-4: 24px;
+      --space-5: 32px;
+      --space-6: 40px;
+      --space-7: 56px;
+      --space-8: 72px;
+      --space-9: 96px;
+    }
 
-<section class="section" id="trust" aria-labelledby="trust-title">
-  <div class="container">
-    <h2 id="trust-title">Почему нам можно доверять</h2>
-    <div class="trust-grid">
-      <div class="trust-item">Инженерная команда, говорящая на языке производства.</div>
-      <div class="trust-item">Прозрачные спецификации и честные ограничения.</div>
-      <div class="trust-item">Регламенты настройки, чек‑листы и документация.</div>
-      <div class="trust-item">Пилот и демо до принятия решения.</div>
-      <div class="trust-item">Поддержка внедрения и удаленная диагностика.</div>
-      <div class="trust-item">NDA и конфиденциальность проектов.</div>
-    </div>
-  </div>
-</section>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
 
-<section class="section" id="specs" aria-labelledby="specs-title">
-  <div class="container">
-    <div class="section-head">
-      <h2 id="specs-title">Характеристики</h2>
-      <p>Полный даташит доступен по запросу. Значения подтверждаются под вашу задачу.</p>
-    </div>
-    <div class="table-wrap">
-      <table class="specs-table">
-        <tbody>
-          <tr><td>Производительность</td><td>до 1580 CPH</td></tr>
-          <tr><td>Поддерживаемые компоненты</td><td>от 0402 до крупных чипов; шаг IC от 0.4 мм, BGA от 0.5 мм</td></tr>
-          <tr><td>Максимальный размер платы</td><td>225 × 400 мм (поддержка двустороннего монтажа)</td></tr>
-          <tr><td>Количество сопел</td><td>2 независимых вакуумных сопла</td></tr>
-          <tr><td>Слоты питателей</td><td>до 50 шт.</td></tr>
-          <tr><td>Материнская плата</td><td>STM32F407VET6</td></tr>
-          <tr><td>Система технического зрения</td><td>Верхняя и нижняя камеры</td></tr>
-          <tr><td>ПО</td><td>OpenPnP</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="section-cta">
-      <a class="btn btn-primary" href="#contact">Скачать даташит</a>
-    </div>
-  </div>
-</section>
+    html {
+      scroll-behavior: smooth;
+    }
 
-<section class="section alt" id="demo" aria-labelledby="demo-title">
-  <div class="container demo-grid">
-    <div>
-      <h2 id="demo-title">Демонстрация работы</h2>
-      <p>Показываем полный цикл: подача компонентов, распознавание, установка на плату, контроль качества и смена партии.</p>
-      <ul class="demo-list">
-        <li>Подача из питателей и позиционирование</li>
-        <li>Видеоконтроль и коррекция</li>
-        <li>Установка компонентов на плату</li>
-        <li>Проверка результатов и отчеты</li>
-      </ul>
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 16px;
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 999px;
+      z-index: 1000;
+    }
+
+    .skip-link:focus {
+      left: 16px;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--container));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: var(--space-9) 0;
+      scroll-margin-top: 96px;
+    }
+
+    .section.alt {
+      background: var(--bg-alt);
+    }
+
+    .section h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(28px, 3vw, 36px);
+      margin: 0 0 var(--space-4);
+    }
+
+    .section h3 {
+      font-family: "Space Grotesk", sans-serif;
+      margin: 0 0 var(--space-2);
+      font-size: 20px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      color: var(--accent-2);
+      font-size: 12px;
+    }
+
+    .lead {
+      font-size: clamp(18px, 2vw, 22px);
+      color: var(--muted);
+    }
+
+    .helper {
+      margin-top: var(--space-3);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .note {
+      margin-top: var(--space-4);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(244, 247, 251, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .site-header.is-sticky {
+      border-bottom: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      padding: var(--space-3) 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    }
+
+    .brand-name {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .nav {
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    .nav a {
+      color: var(--muted);
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav a.active {
+      color: var(--text);
+      border-color: var(--accent);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+
+    .phone {
+      font-weight: 600;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 12px 20px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .btn:focus {
+      outline: 3px solid rgba(11, 110, 245, 0.3);
+      outline-offset: 2px;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(11, 110, 245, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: transparent;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(11, 110, 245, 0.08);
+    }
+
+    .btn-ghost {
+      border-color: var(--line);
+      color: var(--text);
+      background: transparent;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 32, 0.04);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle at center, rgba(18, 165, 123, 0.25), transparent 70%);
+      z-index: 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-7);
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(34px, 4vw, 52px);
+      margin: 0 0 var(--space-3);
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      margin-top: var(--space-4);
+    }
+
+    .kpi-list {
+      list-style: none;
+      padding: 0;
+      margin: var(--space-5) 0 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-3);
+    }
+
+    .kpi-list li {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: var(--space-3);
+      display: grid;
+      gap: 6px;
+    }
+
+    .hero-visual .visual-frame {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: var(--space-3);
+      text-align: center;
+      padding: var(--space-6);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-logo-lockup {
+      display: grid;
+      justify-items: center;
+      gap: var(--space-4);
+    }
+
+    .hero-logo-mark {
+      width: 112px;
+      height: 112px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 18px 40px rgba(11, 110, 245, 0.22);
+    }
+
+    .hero-logo-word {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(38px, 5vw, 64px);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+
+    .visual-frame img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .visual-label {
+      font-weight: 600;
+    }
+
+    .visual-sub {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--space-4);
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      padding: var(--space-4);
+      box-shadow: 0 12px 24px rgba(15, 23, 32, 0.05);
+    }
+
+    .section-cta {
+      margin-top: var(--space-5);
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--space-4);
+    }
+
+    .benefit {
+      padding: var(--space-4);
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--space-3);
+    }
+
+    .trust-item {
+      padding: var(--space-3);
+      border-left: 3px solid var(--accent);
+      background: var(--surface);
+      border-radius: var(--radius-sm);
+    }
+
+    .section-head {
+      display: grid;
+      gap: var(--space-2);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+    }
+
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .specs-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .specs-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-6);
+      align-items: center;
+    }
+
+    .demo-list {
+      margin: var(--space-3) 0 0;
+      padding-left: 20px;
+    }
+
+    .demo-video .video-placeholder {
+      background: var(--surface);
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+      min-height: 280px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      gap: 8px;
+    }
+
+    .demo-video img,
+    .demo-video video {
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+    }
+
+    .demo-video video {
+      background: #0f1b26;
+      display: block;
+    }
+
+    .demo-video {
+      position: relative;
+    }
+
+    .demo-play {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .demo-play span {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: rgba(15, 23, 32, 0.7);
+      border: 1px solid rgba(214, 221, 230, 0.6);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 14px 30px rgba(15, 23, 32, 0.3);
+      position: relative;
+      animation: pulse 2.4s ease-out infinite;
+    }
+
+    .demo-play span::before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 18px solid #ffffff;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      margin-left: 4px;
+    }
+
+    .demo-play:focus {
+      outline: 3px solid rgba(11, 110, 245, 0.35);
+      outline-offset: -6px;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      z-index: 200;
+    }
+
+    .modal.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 32, 0.7);
+    }
+
+    .modal-content {
+      position: relative;
+      z-index: 1;
+      width: min(900px, 92vw);
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: var(--space-5);
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: var(--space-3);
+    }
+
+    .modal-video {
+      width: 100%;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line);
+      background: #0f1b26;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .modal-close:focus {
+      outline: 3px solid rgba(11, 110, 245, 0.35);
+      outline-offset: 2px;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(11, 110, 245, 0.6);
+      }
+      70% {
+        box-shadow: 0 0 0 18px rgba(11, 110, 245, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(11, 110, 245, 0);
+      }
+    }
+
+    .demo-note {
+      display: block;
+      margin-top: var(--space-2);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .steps {
+      display: grid;
+      gap: var(--space-3);
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: var(--space-3);
+      align-items: center;
+      background: var(--surface);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line);
+      padding: var(--space-3);
+    }
+
+    .step-index {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .roi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-5);
+    }
+
+    .roi-form {
+      display: grid;
+      gap: var(--space-3);
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: var(--space-4);
+      border: 1px solid var(--line);
+    }
+
+    .roi-field label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .roi-field input,
+    .form-card input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      font-family: inherit;
+    }
+
+    .roi-field input:focus,
+    .form-card input:focus {
+      outline: 2px solid rgba(11, 110, 245, 0.3);
+      border-color: var(--accent);
+    }
+
+    .roi-field input.is-invalid,
+    .form-card input.is-invalid {
+      border-color: var(--warning);
+      background: rgba(180, 83, 9, 0.05);
+    }
+
+    .roi-result {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: var(--space-4);
+      border: 1px solid var(--line);
+      display: grid;
+      gap: var(--space-3);
+    }
+
+    .roi-output {
+      padding: var(--space-3);
+      border-radius: 12px;
+      background: rgba(11, 110, 245, 0.08);
+      font-weight: 600;
+    }
+
+    .service-grid,
+    .enterprise-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--space-4);
+    }
+
+    .service-item,
+    .enterprise-item {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      padding: var(--space-4);
+    }
+
+    .faq-list {
+      display: grid;
+      gap: var(--space-3);
+    }
+
+    .faq-list details {
+      background: var(--surface);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line);
+      padding: var(--space-3);
+    }
+
+    .faq-list summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, rgba(11, 110, 245, 0.12), rgba(18, 165, 123, 0.12));
+    }
+
+    .cta-head {
+      max-width: 760px;
+      margin-bottom: var(--space-5);
+    }
+
+    .forms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--space-4);
+    }
+
+    .form-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      padding: var(--space-4);
+      display: grid;
+      gap: var(--space-3);
+    }
+
+    .form-card label {
+      display: grid;
+      gap: 6px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .form-card .checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .form-card .checkbox input {
+      width: auto;
+      margin-top: 3px;
+    }
+
+    .form-card .checkbox input.is-invalid {
+      outline: 2px solid rgba(180, 83, 9, 0.6);
+      outline-offset: 2px;
+    }
+
+    .form-note {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .form-status {
+      font-size: 14px;
+      min-height: 20px;
+    }
+
+    .form-status.success {
+      color: var(--success);
+    }
+
+    .form-status.error {
+      color: var(--warning);
+    }
+
+    .footer {
+      padding: var(--space-6) 0;
+      border-top: 1px solid var(--line);
+      background: #0f1720;
+      color: #d7e2f0;
+    }
+
+    .footer a {
+      color: #d7e2f0;
+    }
+
+    .footer-brand-link {
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-4);
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .header-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+      }
+
+      .step {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#hero">Перейти к содержимому</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#hero" aria-label="TIORA — перейти к началу страницы">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div class="brand-name">TIORA</div>
+      </a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#hero">Решение</a>
+        <a href="#specs">Характеристики</a>
+        <a href="#implementation">Внедрение</a>
+        <a href="#software">ПО</a>
+        <a href="#economics">Экономика</a>
+        <a href="#service">Сервис</a>
+        <a href="#company">О компании</a>
+      </nav>
+      <div class="header-actions">
+        <a class="phone" href="tel:88000888888">8 800 088 88 88</a>
+        <a class="btn btn-primary" href="#contact">Запросить демо</a>
+      </div>
     </div>
-    <div class="demo-video" aria-label="Видео демонстрации работы оборудования">
-      <button class="demo-play" type="button" aria-label="Смотреть демо" data-modal-open="demo">
-        <span></span>
-      </button>
-      <video
-        class="demo-video-player"
-        autoplay
-        muted
-        loop
-        playsinline
-        poster="assets/demo-placeholder.svg"
-      >
+  </header>
+
+  <main>
+    <section class="section hero" id="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="eyebrow">Настольный pick-and-place для серийной сборки</p>
+          <h1 id="hero-title">LumenPnP v4 — Настольный SMD-расстановщик</h1>
+          <p class="lead">Скорость до 1580 CPH, улучшенная высокоточная оптика и тихая работа для эффективной сборки электроники.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact">Запросить демонстрацию</a>
+            <a class="btn btn-secondary" href="#specs">Скачать даташит</a>
+          </div>
+          <p class="helper">Подготовим сценарий демо под ваши платы и компоненты.</p>
+        </div>
+        <div class="hero-visual" role="img" aria-label="Фото оборудования LumenPnP v4">
+          <img src="assets/lumenpnp-v4.jpg" alt="LumenPnP v4 Machine" class="hero-image" style="width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--line); box-shadow: var(--shadow); background: var(--surface);" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="benefits" aria-labelledby="benefits-title">
+      <div class="container">
+        <h2 id="benefits-title">Почему TIORA</h2>
+        <div class="benefits">
+          <div class="benefit">
+            <h3>Высокая скорость</h3>
+            <p>Производительность достигает 1580 CPH благодаря обновленному драйверу оси Y.</p>
+          </div>
+          <div class="benefit">
+            <h3>Высокоточная оптика</h3>
+            <p>Две камеры (верхняя и нижняя) для центровки компонентов от 0402, IC 0.4 мм и BGA 0.5 мм.</p>
+          </div>
+          <div class="benefit">
+            <h3>Масштабируемость питателей</h3>
+            <p>Рабочая зона вмещает до 50 автоматических 8 мм и 12 мм фидеров, а также поддерживает ленточные (strip) питатели.</p>
+          </div>
+          <div class="benefit">
+            <h3>Открытая экосистема</h3>
+            <p>Работает под управлением ПО OpenPnP 2.6, кастомная плата на базе STM32F407VET6.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="trust" aria-labelledby="trust-title">
+      <div class="container">
+        <h2 id="trust-title">Почему нам можно доверять</h2>
+        <div class="trust-grid">
+          <div class="trust-item">Инженерная команда, говорящая на языке производства.</div>
+          <div class="trust-item">Прозрачные спецификации и честные ограничения.</div>
+          <div class="trust-item">Регламенты настройки, чек‑листы и документация.</div>
+          <div class="trust-item">Пилот и демо до принятия решения.</div>
+          <div class="trust-item">Поддержка внедрения и удаленная диагностика.</div>
+          <div class="trust-item">NDA и конфиденциальность проектов.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="specs" aria-labelledby="specs-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="specs-title">Характеристики</h2>
+          <p>Полный даташит доступен по запросу. Значения подтверждаются под вашу задачу.</p>
+        </div>
+        <div class="table-wrap">
+          <table class="specs-table">
+            <tbody>
+              <tr><td>Производительность</td><td>до 1580 CPH</td></tr>
+              <tr><td>Поддерживаемые компоненты</td><td>от 0402 до крупных чипов; шаг IC от 0.4 мм, BGA от 0.5 мм</td></tr>
+              <tr><td>Максимальный размер платы</td><td>225 × 400 мм (поддержка двустороннего монтажа)</td></tr>
+              <tr><td>Количество сопел</td><td>2 независимых вакуумных сопла</td></tr>
+              <tr><td>Слоты питателей</td><td>до 50 шт.</td></tr>
+              <tr><td>Материнская плата</td><td>STM32F407VET6</td></tr>
+              <tr><td>Система технического зрения</td><td>Верхняя и нижняя камеры</td></tr>
+              <tr><td>ПО</td><td>OpenPnP</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="section-cta">
+          <a class="btn btn-primary" href="#contact">Скачать даташит</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="demo" aria-labelledby="demo-title">
+      <div class="container demo-grid">
+        <div>
+          <h2 id="demo-title">Демонстрация работы</h2>
+          <p>Показываем полный цикл: подача компонентов, распознавание, установка на плату, контроль качества и смена партии.</p>
+          <ul class="demo-list">
+            <li>Подача из питателей и позиционирование</li>
+            <li>Видеоконтроль и коррекция</li>
+            <li>Установка компонентов на плату</li>
+            <li>Проверка результатов и отчеты</li>
+          </ul>
+        </div>
+        <div class="demo-video" aria-label="Видео демонстрации работы оборудования">
+          <button class="demo-play" type="button" aria-label="Смотреть демо" data-modal-open="demo">
+            <span></span>
+          </button>
+          <video
+            class="demo-video-player"
+            autoplay
+            muted
+            loop
+            playsinline
+            poster="assets/demo-placeholder.svg"
+          >
+            <source src="assets/demo.mp4" type="video/mp4" />
+            <source src="assets/demo.webm" type="video/webm" />
+            Ваш браузер не поддерживает видео. Замените файлы demo.mp4/webm на ваши.
+          </video>
+          <span class="demo-note">Видео демонстрации. Замените файл при необходимости.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="implementation" aria-labelledby="implementation-title">
+      <div class="container">
+        <h2 id="implementation-title">Как внедряется решение</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-index">01</div>
+            <div>
+              <h3>Бриф и постановка задачи</h3>
+              <p>Фиксируем платы, компоненты и требования.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-index">02</div>
+            <div>
+              <h3>Подготовка процесса</h3>
+              <p>Библиотека компонентов, профили и питатели.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-index">03</div>
+            <div>
+              <h3>Демо или пилот</h3>
+              <p>Проверка параметров и качества на вашем изделии.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-index">04</div>
+            <div>
+              <h3>Ввод в эксплуатацию</h3>
+              <p>Запуск на площадке или удаленно.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-index">05</div>
+            <div>
+              <h3>Обучение</h3>
+              <p>Операторы, инженеры, контрольные чек‑листы.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-index">06</div>
+            <div>
+              <h3>Сопровождение</h3>
+              <p>SLA‑подход и удаленная диагностика.</p>
+            </div>
+          </div>
+        </div>
+        <div class="section-cta">
+          <a class="btn btn-secondary" href="#contact">Согласовать пилот</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="software" aria-labelledby="software-title">
+      <div class="container">
+        <h2 id="software-title">ПО и интеграции</h2>
+        <p>Поддерживаем интеграцию в производственный процесс и подготовку производства. Форматы и сценарии согласуются с вашей инфраструктурой.</p>
+        <div class="cards">
+          <article class="card">
+            <h3>Импорт данных</h3>
+            <p>[уточнить форматы]</p>
+          </article>
+          <article class="card">
+            <h3>Экспорт отчетов</h3>
+            <p>[уточнить]</p>
+          </article>
+          <article class="card">
+            <h3>Интеграции</h3>
+            <p>[уточнить]</p>
+          </article>
+        </div>
+        <div class="section-cta">
+          <a class="btn btn-secondary" href="#contact">Уточнить интеграцию</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="economics" aria-labelledby="economics-title">
+      <div class="container">
+        <h2 id="economics-title">Экономика и окупаемость</h2>
+        <p>Считаем эффект от сокращения трудозатрат, снижения ошибок и ускорения выпуска серий.</p>
+        <div class="roi-grid">
+          <div class="roi-form">
+            <div class="roi-field">
+              <label for="roi-volume">Объем плат в месяц</label>
+              <input id="roi-volume" type="number" inputmode="numeric" placeholder="например, 500" />
+            </div>
+            <div class="roi-field">
+              <label for="roi-manual">Время ручной установки, мин/плата</label>
+              <input id="roi-manual" type="number" inputmode="numeric" placeholder="например, 18" />
+            </div>
+            <div class="roi-field">
+              <label for="roi-machine">Время на станке, мин/плата</label>
+              <input id="roi-machine" type="number" inputmode="numeric" placeholder="например, 6" />
+            </div>
+            <div class="roi-field">
+              <label for="roi-rate">Ставка оператора, ₽/час</label>
+              <input id="roi-rate" type="number" inputmode="numeric" placeholder="например, 800" />
+            </div>
+            <div class="roi-field">
+              <label for="roi-defect">Ожидаемое снижение брака, %</label>
+              <input id="roi-defect" type="number" inputmode="numeric" placeholder="например, 30" />
+            </div>
+            <div class="roi-field">
+              <label for="roi-defect-cost">Стоимость брака в месяц, ₽</label>
+              <input id="roi-defect-cost" type="number" inputmode="numeric" placeholder="например, 150000" />
+            </div>
+            <button class="btn btn-primary" type="button" id="roi-calc">Рассчитать эффект</button>
+          </div>
+          <div class="roi-result" aria-live="polite">
+            <h3>Шаблон расчета</h3>
+            <p>Экономия = (Ручные часы – Машинные часы) × Ставка + (Снижение брака × Стоимость брака)</p>
+            <div class="roi-output" id="roi-output">Введите данные для предварительного расчета.</div>
+            <p class="helper">Расчет ориентировочный и уточняется после брифа.</p>
+            <a class="btn btn-secondary" href="#contact">Запросить расчет окупаемости</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="scenarios" aria-labelledby="scenarios-title">
+      <div class="container">
+        <h2 id="scenarios-title">Сценарии применения</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>R&D‑лаборатория</h3>
+            <p>Быстрый выпуск прототипов и малых серий.</p>
+          </article>
+          <article class="card">
+            <h3>Контрактная сборка</h3>
+            <p>Стабильная повторяемость при разных заказах.</p>
+          </article>
+          <article class="card">
+            <h3>Учебная лаборатория</h3>
+            <p>Практикумы и методические материалы.</p>
+          </article>
+          <article class="card">
+            <h3>Enterprise‑подразделение</h3>
+            <p>Стандартизация процесса и контроль качества.</p>
+          </article>
+        </div>
+        <p class="note">Конкретные результаты предоставляются по запросу после согласования NDA. [уточнить]</p>
+        <div class="section-cta">
+          <a class="btn btn-secondary" href="#contact">Запросить демо по сценарию</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="service" aria-labelledby="service-title">
+      <div class="container">
+        <h2 id="service-title">Сервис, гарантия, обучение</h2>
+        <p>Сопровождаем весь цикл — от запуска до регулярной эксплуатации. Предоставляем документацию, обучение и удаленную диагностику.</p>
+        <div class="service-grid">
+          <div class="service-item">
+            <h3>Гарантия</h3>
+            <p>Стандартная для класса, уточняется в КП. [уточнить]</p>
+          </div>
+          <div class="service-item">
+            <h3>SLA‑условия</h3>
+            <p>Согласуются в договоре и зависят от комплектации. [уточнить]</p>
+          </div>
+          <div class="service-item">
+            <h3>Обучение</h3>
+            <p>Базовый и расширенный формат, очно или онлайн.</p>
+          </div>
+          <div class="service-item">
+            <h3>Документация</h3>
+            <p>Регламенты, чек‑листы и инструкции по эксплуатации.</p>
+          </div>
+        </div>
+        <div class="section-cta">
+          <a class="btn btn-secondary" href="#contact">Получить условия сервиса</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="enterprise" aria-labelledby="enterprise-title">
+      <div class="container">
+        <h2 id="enterprise-title">Enterprise‑ready</h2>
+        <p>Решение учитывает требования крупных компаний: документооборот, предсказуемость поставок, поддержка внедрения, масштабирование парка оборудования.</p>
+        <div class="enterprise-grid">
+          <div class="enterprise-item">Поддержка внедрения и обучение персонала.</div>
+          <div class="enterprise-item">Стандартизированные профили и библиотеки.</div>
+          <div class="enterprise-item">Предсказуемость поставок и регламентов.</div>
+          <div class="enterprise-item">Документированное сопровождение и SLA.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="company" aria-labelledby="company-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="company-title">О компании</h2>
+          <p>TIORA разрабатывает решения для автоматизации SMT-производства с фокусом на инженерную точность, предсказуемость внедрения и техническое сопровождение после запуска.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>Инженерный подход</h3>
+            <p>Прорабатываем задачу на уровне компонентов, сценариев сборки, ограничений линии и требований к качеству.</p>
+          </article>
+          <article class="card">
+            <h3>Прозрачная спецификация</h3>
+            <p>Фиксируем реальные параметры, ограничения и условия применения без перегруженных маркетинговых формулировок.</p>
+          </article>
+          <article class="card">
+            <h3>Поддержка внедрения</h3>
+            <p>Помогаем с пилотом, обучением команды, регламентами эксплуатации и удаленной диагностикой после поставки.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="cta-head">
+          <h2 id="contact-title">Запустим демонстрацию на вашей плате</h2>
+          <p>Подготовим КП, согласуем пилот и дадим рекомендации по процессу.</p>
+        </div>
+        <div class="forms-grid">
+          <form class="form-card" data-form="demo">
+            <h3>Демонстрация на вашей плате</h3>
+            <p>Опишите компоненты и объем партии — подготовим сценарий демо.</p>
+            <label>Имя
+              <input type="text" name="name" required />
+            </label>
+            <label>Компания
+              <input type="text" name="company" required />
+            </label>
+            <label>Email
+              <input type="email" name="email" required />
+            </label>
+            <label>Телефон
+              <input type="tel" name="phone" required />
+            </label>
+            <label>Тип плат/компонентов
+              <input type="text" name="pcb" />
+            </label>
+            <label>Объем партии
+              <input type="text" name="volume" />
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="consent" required />
+              <span>Согласен на обработку данных по политике конфиденциальности.</span>
+            </label>
+            <button class="btn btn-primary" type="submit">Запросить демо</button>
+            <p class="form-note">Мы отвечаем в рабочее время и не передаем данные третьим лицам без согласия.</p>
+            <div class="form-status" role="status"></div>
+          </form>
+
+          <form class="form-card" data-form="cp">
+            <h3>КП под ваши требования</h3>
+            <p>Укажем комплектацию, сроки и условия поставки.</p>
+            <label>Имя
+              <input type="text" name="name" required />
+            </label>
+            <label>Компания
+              <input type="text" name="company" required />
+            </label>
+            <label>Email
+              <input type="email" name="email" required />
+            </label>
+            <label>Телефон
+              <input type="tel" name="phone" required />
+            </label>
+            <label>Требуемая конфигурация
+              <input type="text" name="config" />
+            </label>
+            <label>Планируемые сроки
+              <input type="text" name="timing" />
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="consent" required />
+              <span>Согласен на обработку данных по политике конфиденциальности.</span>
+            </label>
+            <button class="btn btn-secondary" type="submit">Получить КП</button>
+            <p class="form-note">Информация носит предварительный характер и уточняется после согласования спецификации.</p>
+            <div class="form-status" role="status"></div>
+          </form>
+
+          <form class="form-card" data-form="datasheet">
+            <h3>Даташит и техническое описание</h3>
+            <p>Отправим актуальную версию на почту.</p>
+            <label>Email
+              <input type="email" name="email" required />
+            </label>
+            <label>Компания
+              <input type="text" name="company" />
+            </label>
+            <label>Роль/должность
+              <input type="text" name="role" />
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="consent" required />
+              <span>Согласен на обработку данных по политике конфиденциальности.</span>
+            </label>
+            <button class="btn btn-ghost" type="submit">Скачать даташит</button>
+            <p class="form-note">Данные в даташите являются ориентировочными и требуют подтверждения под вашу задачу.</p>
+            <div class="form-status" role="status"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="demo-modal" role="dialog" aria-modal="true" aria-labelledby="demo-modal-title" aria-hidden="true">
+    <div class="modal-backdrop" data-modal-close></div>
+    <div class="modal-content" role="document">
+      <button class="modal-close" type="button" aria-label="Закрыть демо" data-modal-close>×</button>
+      <h3 id="demo-modal-title">Демонстрация работы</h3>
+      <video class="modal-video" controls playsinline>
         <source src="assets/demo.mp4" type="video/mp4" />
         <source src="assets/demo.webm" type="video/webm" />
         Ваш браузер не поддерживает видео. Замените файлы demo.mp4/webm на ваши.
       </video>
-      <span class="demo-note">Видео демонстрации. Замените файл при необходимости.</span>
+      <p class="helper">Видео демонстрации. Замените файл при необходимости.</p>
     </div>
   </div>
-</section>
 
-<section class="section" id="implementation" aria-labelledby="implementation-title">
-  <div class="container">
-    <h2 id="implementation-title">Как внедряется решение</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-index">01</div>
-        <div>
-          <h3>Бриф и постановка задачи</h3>
-          <p>Фиксируем платы, компоненты и требования.</p>
-        </div>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand-name footer-brand-link" href="#hero">TIORA</a>
+        <p>Настольные SMD‑расстановщики для серийной сборки и R&D.</p>
       </div>
-      <div class="step">
-        <div class="step-index">02</div>
-        <div>
-          <h3>Подготовка процесса</h3>
-          <p>Библиотека компонентов, профили и питатели.</p>
-        </div>
+      <div>
+        <p><strong>Контакты</strong></p>
+        <p><a href="tel:88000888888">8 800 088 88 88</a></p>
+        <p>Email: [уточнить]</p>
       </div>
-      <div class="step">
-        <div class="step-index">03</div>
-        <div>
-          <h3>Демо или пилот</h3>
-          <p>Проверка параметров и качества на вашем изделии.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-index">04</div>
-        <div>
-          <h3>Ввод в эксплуатацию</h3>
-          <p>Запуск на площадке или удаленно.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-index">05</div>
-        <div>
-          <h3>Обучение</h3>
-          <p>Операторы, инженеры, контрольные чек‑листы.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-index">06</div>
-        <div>
-          <h3>Сопровождение</h3>
-          <p>SLA‑подход и удаленная диагностика.</p>
-        </div>
+      <div>
+        <p><strong>Юридическая информация</strong></p>
+        <p>Политика конфиденциальности</p>
+        <p>Согласие на обработку данных</p>
+        <p>Реквизиты [уточнить]</p>
       </div>
     </div>
-    <div class="section-cta">
-      <a class="btn btn-secondary" href="#contact">Согласовать пилот</a>
-    </div>
-  </div>
-</section>
+  </footer>
 
-<section class="section alt" id="software" aria-labelledby="software-title">
-  <div class="container">
-    <h2 id="software-title">ПО и интеграции</h2>
-    <p>Поддерживаем интеграцию в производственный процесс и подготовку производства. Форматы и сценарии согласуются с вашей инфраструктурой.</p>
-    <div class="cards">
-      <article class="card">
-        <h3>Импорт данных</h3>
-        <p>[уточнить форматы]</p>
-      </article>
-      <article class="card">
-        <h3>Экспорт отчетов</h3>
-        <p>[уточнить]</p>
-      </article>
-      <article class="card">
-        <h3>Интеграции</h3>
-        <p>[уточнить]</p>
-      </article>
-    </div>
-    <div class="section-cta">
-      <a class="btn btn-secondary" href="#contact">Уточнить интеграцию</a>
-    </div>
-  </div>
-</section>
+  <script>
+    (() => {
+      const header = document.querySelector('.site-header');
+      const navLinks = Array.from(document.querySelectorAll('.nav a'));
+      const sections = Array.from(document.querySelectorAll('main section[id]'));
 
-<section class="section" id="economics" aria-labelledby="economics-title">
-  <div class="container">
-    <h2 id="economics-title">Экономика и окупаемость</h2>
-    <p>Считаем эффект от сокращения трудозатрат, снижения ошибок и ускорения выпуска серий.</p>
-    <div class="roi-grid">
-      <div class="roi-form">
-        <div class="roi-field">
-          <label for="roi-volume">Объем плат в месяц</label>
-          <input id="roi-volume" type="number" inputmode="numeric" placeholder="например, 500" />
-        </div>
-        <div class="roi-field">
-          <label for="roi-manual">Время ручной установки, мин/плата</label>
-          <input id="roi-manual" type="number" inputmode="numeric" placeholder="например, 18" />
-        </div>
-        <div class="roi-field">
-          <label for="roi-machine">Время на станке, мин/плата</label>
-          <input id="roi-machine" type="number" inputmode="numeric" placeholder="например, 6" />
-        </div>
-        <div class="roi-field">
-          <label for="roi-rate">Ставка оператора, ₽/час</label>
-          <input id="roi-rate" type="number" inputmode="numeric" placeholder="например, 800" />
-        </div>
-        <div class="roi-field">
-          <label for="roi-defect">Ожидаемое снижение брака, %</label>
-          <input id="roi-defect" type="number" inputmode="numeric" placeholder="например, 30" />
-        </div>
-        <div class="roi-field">
-          <label for="roi-defect-cost">Стоимость брака в месяц, ₽</label>
-          <input id="roi-defect-cost" type="number" inputmode="numeric" placeholder="например, 150000" />
-        </div>
-        <button class="btn btn-primary" type="button" id="roi-calc">Рассчитать эффект</button>
-      </div>
-      <div class="roi-result" aria-live="polite">
-        <h3>Шаблон расчета</h3>
-        <p>Экономия = (Ручные часы – Машинные часы) × Ставка + (Снижение брака × Стоимость брака)</p>
-        <div class="roi-output" id="roi-output">Введите данные для предварительного расчета.</div>
-        <p class="helper">Расчет ориентировочный и уточняется после брифа.</p>
-        <a class="btn btn-secondary" href="#contact">Запросить расчет окупаемости</a>
-      </div>
-    </div>
-  </div>
-</section>
+      const handleScroll = () => {
+        if (!header) return;
+        header.classList.toggle('is-sticky', window.scrollY > 12);
+      };
 
-<section class="section alt" id="scenarios" aria-labelledby="scenarios-title">
-  <div class="container">
-    <h2 id="scenarios-title">Сценарии применения</h2>
-    <div class="cards">
-      <article class="card">
-        <h3>R&D‑лаборатория</h3>
-        <p>Быстрый выпуск прототипов и малых серий.</p>
-      </article>
-      <article class="card">
-        <h3>Контрактная сборка</h3>
-        <p>Стабильная повторяемость при разных заказах.</p>
-      </article>
-      <article class="card">
-        <h3>Учебная лаборатория</h3>
-        <p>Практикумы и методические материалы.</p>
-      </article>
-      <article class="card">
-        <h3>Enterprise‑подразделение</h3>
-        <p>Стандартизация процесса и контроль качества.</p>
-      </article>
-    </div>
-    <p class="note">Конкретные результаты предоставляются по запросу после согласования NDA. [уточнить]</p>
-    <div class="section-cta">
-      <a class="btn btn-secondary" href="#contact">Запросить демо по сценарию</a>
-    </div>
-  </div>
-</section>
+      handleScroll();
+      window.addEventListener('scroll', handleScroll, { passive: true });
 
-<section class="section" id="service" aria-labelledby="service-title">
-  <div class="container">
-    <h2 id="service-title">Сервис, гарантия, обучение</h2>
-    <p>Сопровождаем весь цикл — от запуска до регулярной эксплуатации. Предоставляем документацию, обучение и удаленную диагностику.</p>
-    <div class="service-grid">
-      <div class="service-item">
-        <h3>Гарантия</h3>
-        <p>Стандартная для класса, уточняется в КП. [уточнить]</p>
-      </div>
-      <div class="service-item">
-        <h3>SLA‑условия</h3>
-        <p>Согласуются в договоре и зависят от комплектации. [уточнить]</p>
-      </div>
-      <div class="service-item">
-        <h3>Обучение</h3>
-        <p>Базовый и расширенный формат, очно или онлайн.</p>
-      </div>
-      <div class="service-item">
-        <h3>Документация</h3>
-        <p>Регламенты, чек‑листы и инструкции по эксплуатации.</p>
-      </div>
-    </div>
-    <div class="section-cta">
-      <a class="btn btn-secondary" href="#contact">Получить условия сервиса</a>
-    </div>
-  </div>
-</section>
+      if (sections.length && navLinks.length) {
+        const map = new Map(navLinks.map(link => [link.getAttribute('href')?.slice(1), link]));
+        const observer = new IntersectionObserver(
+          entries => {
+            entries.forEach(entry => {
+              const id = entry.target.getAttribute('id');
+              const link = map.get(id);
+              if (!link) return;
+              if (entry.isIntersecting) {
+                navLinks.forEach(item => item.classList.remove('active'));
+                link.classList.add('active');
+              }
+            });
+          },
+          { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+        );
+        sections.forEach(section => observer.observe(section));
+      }
 
-<section class="section alt" id="enterprise" aria-labelledby="enterprise-title">
-  <div class="container">
-    <h2 id="enterprise-title">Enterprise‑ready</h2>
-    <p>Решение учитывает требования крупных компаний: документооборот, предсказуемость поставок, поддержка внедрения, масштабирование парка оборудования.</p>
-    <div class="enterprise-grid">
-      <div class="enterprise-item">Поддержка внедрения и обучение персонала.</div>
-      <div class="enterprise-item">Стандартизированные профили и библиотеки.</div>
-      <div class="enterprise-item">Предсказуемость поставок и регламентов.</div>
-      <div class="enterprise-item">Документированное сопровождение и SLA.</div>
-    </div>
-  </div>
-</section>
+      const forms = Array.from(document.querySelectorAll('form[data-form]'));
+      forms.forEach(form => {
+        const status = form.querySelector('.form-status');
+        const requiredFields = Array.from(form.querySelectorAll('[required]'));
 
-<section class="section alt" id="company" aria-labelledby="company-title">
-  <div class="container">
-    <div class="section-head">
-      <h2 id="company-title">О компании</h2>
-      <p>TIORA разрабатывает решения для автоматизации SMT-производства с фокусом на инженерную точность, предсказуемость внедрения и техническое сопровождение после запуска.</p>
-    </div>
-    <div class="cards">
-      <article class="card">
-        <h3>Инженерный подход</h3>
-        <p>Прорабатываем задачу на уровне компонентов, сценариев сборки, ограничений линии и требований к качеству.</p>
-      </article>
-      <article class="card">
-        <h3>Прозрачная спецификация</h3>
-        <p>Фиксируем реальные параметры, ограничения и условия применения без перегруженных маркетинговых формулировок.</p>
-      </article>
-      <article class="card">
-        <h3>Поддержка внедрения</h3>
-        <p>Помогаем с пилотом, обучением команды, регламентами эксплуатации и удаленной диагностикой после поставки.</p>
-      </article>
-    </div>
-  </div>
-</section>
+        const clearErrors = () => {
+          requiredFields.forEach(field => field.classList.remove('is-invalid'));
+        };
 
-<section class="section cta" id="contact" aria-labelledby="contact-title">
-  <div class="container">
-    <div class="cta-head">
-      <h2 id="contact-title">Запустим демонстрацию на вашей плате</h2>
-      <p>Подготовим КП, согласуем пилот и дадим рекомендации по процессу.</p>
-    </div>
-    <div class="forms-grid">
-      <form class="form-card" data-form="demo">
-        <h3>Демонстрация на вашей плате</h3>
-        <p>Опишите компоненты и объем партии — подготовим сценарий демо.</p>
-        <label>Имя
-          <input type="text" name="name" required />
-        </label>
-        <label>Компания
-          <input type="text" name="company" required />
-        </label>
-        <label>Email
-          <input type="email" name="email" required />
-        </label>
-        <label>Телефон
-          <input type="tel" name="phone" required />
-        </label>
-        <label>Тип плат/компонентов
-          <input type="text" name="pcb" />
-        </label>
-        <label>Объем партии
-          <input type="text" name="volume" />
-        </label>
-        <label class="checkbox">
-          <input type="checkbox" name="consent" required />
-          <span>Согласен на обработку данных по политике конфиденциальности.</span>
-        </label>
-        <button class="btn btn-primary" type="submit">Запросить демо</button>
-        <p class="form-note">Мы отвечаем в рабочее время и не передаем данные третьим лицам без согласия.</p>
-        <div class="form-status" role="status"></div>
-      </form>
+        form.addEventListener('input', event => {
+          if (event.target instanceof HTMLInputElement) {
+            event.target.classList.remove('is-invalid');
+          }
+          if (status) {
+            status.textContent = '';
+            status.className = 'form-status';
+          }
+        });
 
-      <form class="form-card" data-form="cp">
-        <h3>КП под ваши требования</h3>
-        <p>Укажем комплектацию, сроки и условия поставки.</p>
-        <label>Имя
-          <input type="text" name="name" required />
-        </label>
-        <label>Компания
-          <input type="text" name="company" required />
-        </label>
-        <label>Email
-          <input type="email" name="email" required />
-        </label>
-        <label>Телефон
-          <input type="tel" name="phone" required />
-        </label>
-        <label>Требуемая конфигурация
-          <input type="text" name="config" />
-        </label>
-        <label>Планируемые сроки
-          <input type="text" name="timing" />
-        </label>
-        <label class="checkbox">
-          <input type="checkbox" name="consent" required />
-          <span>Согласен на обработку данных по политике конфиденциальности.</span>
-        </label>
-        <button class="btn btn-secondary" type="submit">Получить КП</button>
-        <p class="form-note">Информация носит предварительный характер и уточняется после согласования спецификации.</p>
-        <div class="form-status" role="status"></div>
-      </form>
+        form.addEventListener('submit', event => {
+          event.preventDefault();
+          clearErrors();
+          let valid = true;
 
-      <form class="form-card" data-form="datasheet">
-        <h3>Даташит и техническое описание</h3>
-        <p>Отправим актуальную версию на почту.</p>
-        <label>Email
-          <input type="email" name="email" required />
-        </label>
-        <label>Компания
-          <input type="text" name="company" />
-        </label>
-        <label>Роль/должность
-          <input type="text" name="role" />
-        </label>
-        <label class="checkbox">
-          <input type="checkbox" name="consent" required />
-          <span>Согласен на обработку данных по политике конфиденциальности.</span>
-        </label>
-        <button class="btn btn-ghost" type="submit">Скачать даташит</button>
-        <p class="form-note">Данные в даташите являются ориентировочными и требуют подтверждения под вашу задачу.</p>
-        <div class="form-status" role="status"></div>
-      </form>
-    </div>
-  </div>
-</section>
+          requiredFields.forEach(field => {
+            const isCheckbox = field.type === 'checkbox';
+            const isValid = isCheckbox ? field.checked : Boolean(field.value.trim());
+            if (!isValid) {
+              field.classList.add('is-invalid');
+              valid = false;
+            }
+          });
+
+          if (!status) return;
+
+          if (valid) {
+            status.textContent = 'Спасибо! Заявка получена, мы свяжемся в рабочее время.';
+            status.className = 'form-status success';
+            form.reset();
+          } else {
+            status.textContent = 'Проверьте обязательные поля и корректность данных.';
+            status.className = 'form-status error';
+          }
+        });
+      });
+
+      const calcButton = document.getElementById('roi-calc');
+      const output = document.getElementById('roi-output');
+
+      const toNumber = value => {
+        const parsed = Number.parseFloat(value);
+        return Number.isFinite(parsed) ? parsed : null;
+      };
+
+      const formatCurrency = value => new Intl.NumberFormat('ru-RU', {
+        style: 'currency',
+        currency: 'RUB',
+        maximumFractionDigits: 0
+      }).format(value);
+
+      if (calcButton && output) {
+        calcButton.addEventListener('click', () => {
+          const volume = toNumber(document.getElementById('roi-volume')?.value);
+          const manual = toNumber(document.getElementById('roi-manual')?.value);
+          const machine = toNumber(document.getElementById('roi-machine')?.value);
+          const rate = toNumber(document.getElementById('roi-rate')?.value);
+          const defectReduction = toNumber(document.getElementById('roi-defect')?.value) ?? 0;
+          const defectCost = toNumber(document.getElementById('roi-defect-cost')?.value) ?? 0;
+
+          if (volume === null || manual === null || machine === null || rate === null) {
+            output.textContent = 'Заполните объем, время ручной установки, время на станке и ставку оператора.';
+            return;
+          }
+
+          const manualHours = (volume * manual) / 60;
+          const machineHours = (volume * machine) / 60;
+          const laborSavings = (manualHours - machineHours) * rate;
+          const defectSavings = (defectReduction / 100) * defectCost;
+          const total = Math.max(laborSavings + defectSavings, 0);
+
+          output.textContent = `Оценка экономии в месяц: ${formatCurrency(total)}`;
+        });
+      }
+
+      const modal = document.getElementById('demo-modal');
+      const modalVideo = modal?.querySelector('video');
+      const openButtons = Array.from(document.querySelectorAll('[data-modal-open="demo"]'));
+      const closeButtons = modal ? Array.from(modal.querySelectorAll('[data-modal-close]')) : [];
+
+      const openModal = () => {
+        if (!modal) return;
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        if (modalVideo) {
+          modalVideo.play().catch(() => {});
+        }
+      };
+
+      const closeModal = () => {
+        if (!modal) return;
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+        if (modalVideo) {
+          modalVideo.pause();
+        }
+      };
+
+      openButtons.forEach(button => button.addEventListener('click', openModal));
+      closeButtons.forEach(button => button.addEventListener('click', closeModal));
+
+      window.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && modal?.classList.contains('is-open')) {
+          closeModal();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
