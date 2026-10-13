@@ -7,7 +7,7 @@
   <title>Настольный SMD-расстановщик для серийной сборки | TIORA</title>
   <meta name="description" content="Высокоточная автоматическая сборка печатных плат. Скорость до 1580 CPH, высокоточная оптика и поддержка до 50 питателей." />
   <meta property="og:title" content="Настольный SMD-расстановщик для серийной сборки" />
-  <meta property="og:description" content="Скорость до 1580 CPH, улучшенная оптика и тихая работа. Открытая экосистема на базе OpenPnP." />
+  <meta property="og:description" content="Скорость до 1580 CPH, улучшенная оптика и тихая работа." />
 
   <meta name="theme-color" content="#0b6ef5" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
@@ -21,7 +21,6 @@
       --bg: #f4f7fb;
       --bg-alt: #eef2f7;
       --surface: #ffffff;
-      --surface-elevated: #f9fbfd;
       --text: #0f1720;
       --muted: #4b5a6b;
       --line: #d6dde6;
@@ -41,541 +40,106 @@
       --space-5: 32px;
       --space-6: 40px;
       --space-7: 56px;
-      --space-8: 72px;
       --space-9: 96px;
     }
 
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: "IBM Plex Sans", sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.6;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .skip-link {
-      position: absolute;
-      left: -999px;
-      top: 16px;
-      background: var(--accent);
-      color: #fff;
-      padding: 10px 16px;
-      border-radius: 999px;
-      z-index: 1000;
-    }
-
-    .skip-link:focus {
-      left: 16px;
-    }
-
-    .container {
-      width: min(100% - 32px, var(--container));
-      margin: 0 auto;
-    }
-
-    .section {
-      padding: var(--space-9) 0;
-      scroll-margin-top: 96px;
-    }
-
-    .section.alt {
-      background: var(--bg-alt);
-    }
-
-    .section h2 {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: clamp(28px, 3vw, 36px);
-      margin: 0 0 var(--space-4);
-    }
-
-    .section h3 {
-      font-family: "Space Grotesk", sans-serif;
-      margin: 0 0 var(--space-2);
-      font-size: 20px;
-    }
-
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-weight: 600;
-      color: var(--accent-2);
-      font-size: 12px;
-    }
-
-    .lead {
-      font-size: clamp(18px, 2vw, 22px);
-      color: var(--muted);
-    }
-
-    .helper {
-      margin-top: var(--space-3);
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .note {
-      margin-top: var(--space-4);
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(244, 247, 251, 0.9);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid transparent;
-      transition: border 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .site-header.is-sticky {
-      border-bottom: 1px solid var(--line);
-      box-shadow: var(--shadow);
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-4);
-      padding: var(--space-3) 0;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      width: fit-content;
-    }
-.brand-mark {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    }
-
-    .brand-name {
-      font-family: "Space Grotesk", sans-serif;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-    }
-
-    .nav {
-      display: flex;
-      gap: var(--space-3);
-      flex-wrap: wrap;
-      font-size: 14px;
-    }
-
-    .nav a {
-      color: var(--muted);
-      padding: 6px 0;
-      border-bottom: 2px solid transparent;
-    }
-
-    .nav a.active {
-      color: var(--text);
-      border-color: var(--accent);
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-    }
-
-    .phone {
-      font-weight: 600;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 999px;
-      padding: 12px 20px;
-      font-weight: 600;
-      border: 1px solid transparent;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
-    }
-
-    .btn:focus {
-      outline: 3px solid rgba(11, 110, 245, 0.3);
-      outline-offset: 2px;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      box-shadow: 0 14px 30px rgba(11, 110, 245, 0.25);
-    }
-
-    .btn-primary:hover {
-      background: var(--accent-dark);
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: transparent;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(11, 110, 245, 0.08);
-    }
-
-    .btn-ghost {
-      border-color: var(--line);
-      color: var(--text);
-      background: transparent;
-    }
-
-    .btn-ghost:hover {
-      background: rgba(15, 23, 32, 0.04);
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: -200px;
-      right: -200px;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle at center, rgba(18, 165, 123, 0.25), transparent 70%);
-      z-index: 0;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: var(--space-7);
-      align-items: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-content h1 {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: clamp(34px, 4vw, 52px);
-      margin: 0 0 var(--space-3);
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: var(--space-3);
-      flex-wrap: wrap;
-      margin-top: var(--space-4);
-    }
-
-    .hero-visual .visual-frame {
-      background: var(--surface);
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      min-height: 360px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: var(--space-3);
-      text-align: center;
-      padding: var(--space-6);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-logo-lockup {
-      display: grid;
-      justify-items: center;
-      gap: var(--space-4);
-    }
-
-    .hero-logo-mark {
-      width: 112px;
-      height: 112px;
-      border-radius: 28px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 18px 40px rgba(11, 110, 245, 0.22);
-    }
-
-    .hero-logo-word {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: clamp(38px, 5vw, 64px);
-      font-weight: 700;
-      letter-spacing: 0.12em;
-    }
-
-    .visual-label {
-      font-weight: 600;
-    }
-
-    .visual-sub {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: var(--space-4);
-    }
-
-    .card {
-      background: var(--surface);
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      padding: var(--space-4);
-      box-shadow: 0 12px 24px rgba(15, 23, 32, 0.05);
-    }
-
-    .section-cta {
-      margin-top: var(--space-5);
-    }
-.benefits {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: var(--space-4);
-    }
-
-    .benefit {
-      padding: var(--space-4);
-      border-radius: var(--radius);
-      background: var(--surface);
-      border: 1px solid var(--line);
-    }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: var(--space-3);
-    }
-
-    .trust-item {
-      padding: var(--space-3);
-      border-left: 3px solid var(--accent);
-      background: var(--surface);
-      border-radius: var(--radius-sm);
-    }
-
-    .section-head {
-      display: grid;
-      gap: var(--space-2);
-    }
-
-    .table-wrap {
-      overflow-x: auto;
-      background: var(--surface);
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-    }
-
-    .specs-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .specs-table td {
-      padding: 14px 16px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .specs-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .steps {
-      display: grid;
-      gap: var(--space-3);
-    }
-
-    .step {
-      display: grid;
-      grid-template-columns: 60px 1fr;
-      gap: var(--space-3);
-      align-items: center;
-      background: var(--surface);
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--line);
-      padding: var(--space-3);
-    }
-
-    .step-index {
-      font-family: "Space Grotesk", sans-serif;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    .roi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: var(--space-5);
-    }
-
-    .roi-form {
-      display: grid;
-      gap: var(--space-3);
-      background: var(--surface);
-      border-radius: var(--radius);
-      padding: var(--space-4);
-      border: 1px solid var(--line);
-    }
-
-    .roi-field label {
-      display: block;
-      font-weight: 500;
-      margin-bottom: 6px;
-    }
-
-    .roi-field input,
-    .form-card input {
-      width: 100%;
-      padding: 12px 14px;
-      border-radius: 10px;
-      border: 1px solid var(--line);
-      font-family: inherit;
-    }
-
-    .roi-field input:focus,
-    .form-card input:focus {
-      outline: 2px solid rgba(11, 110, 245, 0.3);
-      border-color: var(--accent);
-    }
-
-    .roi-result {
-      background: var(--surface);
-      border-radius: var(--radius);
-      padding: var(--space-4);
-      border: 1px solid var(--line);
-      display: grid;
-      gap: var(--space-3);
-    }
-
-    .roi-output {
-      padding: var(--space-3);
-      border-radius: 12px;
-      background: rgba(11, 110, 245, 0.08);
-      font-weight: 600;
-    }
-
-    .cta {
-      background: linear-gradient(135deg, rgba(11, 110, 245, 0.12), rgba(18, 165, 123, 0.12));
-    }
-
-    .cta-head {
-      max-width: 760px;
-      margin-bottom: var(--space-5);
-    }
-
-    .forms-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: var(--space-4);
-    }
-
-    .form-card {
-      background: var(--surface);
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      padding: var(--space-4);
-      display: grid;
-      gap: var(--space-3);
-    }
-
-    .form-card label {
-      display: grid;
-      gap: 6px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .form-card .checkbox {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .form-card .checkbox input {
-      width: auto;
-      margin-top: 3px;
-    }
-
-    .form-note {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .form-status {
-      font-size: 14px;
-      min-height: 20px;
-    }
-
-    .form-status.success {
-      color: var(--success);
-    }
-
-    .form-status.error {
-      color: var(--warning);
-    }
-
-    .footer {
-      padding: var(--space-6) 0;
-      border-top: 1px solid var(--line);
-      background: #0f1720;
-      color: #d7e2f0;
-    }
-
-    .footer a {
-      color: #d7e2f0;
-    }
-.footer-brand-link {
-      display: inline-block;
-      margin-bottom: 6px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: var(--space-4);
-    }
-
-    @media (max-width: 900px) {
-      .nav {
-        display: none;
-      }
-    }
-
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: "IBM Plex Sans", sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .skip-link { position: absolute; left: -999px; top: 16px; background: var(--accent); color: #fff; padding: 10px 16px; border-radius: 999px; z-index: 1000; }
+    .skip-link:focus { left: 16px; }
+    .container { width: min(100% - 32px, var(--container)); margin: 0 auto; }
+    .section { padding: var(--space-9) 0; scroll-margin-top: 96px; }
+    .section.alt { background: var(--bg-alt); }
+    .section h2 { font-family: "Space Grotesk", sans-serif; font-size: clamp(28px, 3vw, 36px); margin: 0 0 var(--space-4); }
+    .section h3 { font-family: "Space Grotesk", sans-serif; margin: 0 0 var(--space-2); font-size: 20px; }
+    .eyebrow { text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; color: var(--accent-2); font-size: 12px; }
+    .lead { font-size: clamp(18px, 2vw, 22px); color: var(--muted); }
+    .helper { margin-top: var(--space-3); color: var(--muted); font-size: 14px; }
+
+    .site-header { position: sticky; top: 0; z-index: 100; background: rgba(244, 247, 251, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid transparent; transition: border 0.2s ease, box-shadow 0.2s ease; }
+    .site-header.is-sticky { border-bottom: 1px solid var(--line); box-shadow: var(--shadow); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding: var(--space-3) 0; }
+    
+    .brand { display: flex; align-items: center; gap: 10px; width: fit-content; }
+    .brand-mark { width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+    .brand-name { font-family: "Space Grotesk", sans-serif; font-weight: 700; letter-spacing: 0.08em; }
+
+    .nav { display: flex; gap: var(--space-3); flex-wrap: wrap; font-size: 14px; }
+    .nav a { color: var(--muted); padding: 6px 0; border-bottom: 2px solid transparent; }
+    .nav a.active { color: var(--text); border-color: var(--accent); }
+.header-actions { display: flex; align-items: center; gap: var(--space-3); }
+    .phone { font-weight: 600; }
+    
+    .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 12px 20px; font-weight: 600; border: 1px solid transparent; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; }
+    .btn:focus { outline: 3px solid rgba(11, 110, 245, 0.3); outline-offset: 2px; }
+    .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 14px 30px rgba(11, 110, 245, 0.25); }
+    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .btn-secondary { border-color: var(--accent); color: var(--accent); background: transparent; }
+    .btn-secondary:hover { background: rgba(11, 110, 245, 0.08); }
+
+    .hero { position: relative; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; top: -200px; right: -200px; width: 500px; height: 500px; background: radial-gradient(circle at center, rgba(18, 165, 123, 0.25), transparent 70%); z-index: 0; }
+    .hero-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-7); align-items: center; position: relative; z-index: 1; }
+    .hero-content h1 { font-family: "Space Grotesk", sans-serif; font-size: clamp(34px, 4vw, 52px); margin: 0 0 var(--space-3); }
+    
+    .hero-visual .visual-frame { background: var(--surface); border-radius: var(--radius); border: 1px solid var(--line); min-height: 360px; display: flex; flex-direction: column; justify-content: center; gap: var(--space-3); text-align: center; padding: var(--space-6); box-shadow: var(--shadow); }
+    .hero-logo-lockup { display: grid; justify-items: center; gap: var(--space-4); }
+    .hero-logo-mark { width: 112px; height: 112px; border-radius: 28px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 18px 40px rgba(11, 110, 245, 0.22); }
+    .hero-logo-word { font-family: "Space Grotesk", sans-serif; font-size: clamp(38px, 5vw, 64px); font-weight: 700; letter-spacing: 0.12em; }
+    .visual-label { font-weight: 600; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); }
+    .card { background: var(--surface); border-radius: var(--radius); border: 1px solid var(--line); padding: var(--space-4); box-shadow: 0 12px 24px rgba(15, 23, 32, 0.05); }
+    
+    .benefits { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); }
+    .benefit { padding: var(--space-4); border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
+
+    .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-3); }
+    .trust-item { padding: var(--space-3); border-left: 3px solid var(--accent); background: var(--surface); border-radius: var(--radius-sm); }
+
+    .section-head { display: grid; gap: var(--space-2); }
+    .table-wrap { overflow-x: auto; background: var(--surface); border-radius: var(--radius); border: 1px solid var(--line); }
+    .specs-table { width: 100%; border-collapse: collapse; }
+    .specs-table td { padding: 14px 16px; border-bottom: 1px solid var(--line); }
+    .specs-table tr:last-child td { border-bottom: none; }
+
+    .steps { display: grid; gap: var(--space-3); }
+    .step { display: grid; grid-template-columns: 60px 1fr; gap: var(--space-3); align-items: center; background: var(--surface); border-radius: var(--radius-sm); border: 1px solid var(--line); padding: var(--space-3); }
+    .step-index { font-family: "Space Grotesk", sans-serif; font-weight: 700; color: var(--accent); }
+
+    .roi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-5); }
+.roi-form { display: grid; gap: var(--space-3); background: var(--surface); border-radius: var(--radius); padding: var(--space-4); border: 1px solid var(--line); }
+    .roi-field label { display: block; font-weight: 500; margin-bottom: 6px; }
+    .roi-field input, .form-card input { width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--line); font-family: inherit; }
+    .roi-field input:focus, .form-card input:focus { outline: 2px solid rgba(11, 110, 245, 0.3); border-color: var(--accent); }
+    .roi-result { background: var(--surface); border-radius: var(--radius); padding: var(--space-4); border: 1px solid var(--line); display: grid; gap: var(--space-3); }
+    .roi-output { padding: var(--space-3); border-radius: 12px; background: rgba(11, 110, 245, 0.08); font-weight: 600; }
+
+    .cta { background: linear-gradient(135deg, rgba(11, 110, 245, 0.12), rgba(18, 165, 123, 0.12)); }
+    .cta-head { max-width: 760px; margin-bottom: var(--space-5); }
+    .forms-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-4); }
+    .form-card { background: var(--surface); border-radius: var(--radius); border: 1px solid var(--line); padding: var(--space-4); display: grid; gap: var(--space-3); }
+    .form-card label { display: grid; gap: 6px; font-size: 14px; color: var(--muted); }
+    .form-card .checkbox { display: flex; align-items: flex-start; gap: 10px; font-size: 12px; color: var(--muted); }
+    .form-card .checkbox input { width: auto; margin-top: 3px; }
+    .form-note { font-size: 12px; color: var(--muted); }
+    .form-status { font-size: 14px; min-height: 20px; }
+    .form-status.success { color: var(--success); }
+    .form-status.error { color: var(--warning); }
+
+    .footer { padding: var(--space-6) 0; border-top: 1px solid var(--line); background: #0f1720; color: #d7e2f0; }
+    .footer a { color: #d7e2f0; }
+    .footer-brand-link { display: inline-block; margin-bottom: 6px; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); }
+
+    @media (max-width: 900px) { .nav { display: none; } }
     @media (max-width: 720px) {
-      .header-actions {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .step {
-        grid-template-columns: 1fr;
-      }
+      .header-actions { flex-direction: column; align-items: flex-start; }
+      .step { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -592,7 +156,6 @@
         <a href="#hero">Решение</a>
         <a href="#specs">Характеристики</a>
         <a href="#implementation">Внедрение</a>
-        <a href="#software">ПО</a>
         <a href="#economics">Экономика</a>
         <a href="#company">О компании</a>
       </nav>
@@ -614,11 +177,10 @@
         <div class="hero-visual" role="img" aria-label="Логотип TIORA в первом экране сайта">
           <div class="visual-frame">
             <div class="hero-logo-lockup" aria-hidden="true">
-              <div class="hero-logo-mark"></div>
+<div class="hero-logo-mark"></div>
               <div class="hero-logo-word">TIORA</div>
             </div>
             <div class="visual-label">Инженерные решения для SMT-производства</div>
-            <div class="visual-sub">Здесь будет располагаться фото расстановщика.</div>
           </div>
         </div>
       </div>
@@ -654,7 +216,7 @@
         <div class="trust-grid">
           <div class="trust-item">Инженерная команда, говорящая на языке производства.</div>
           <div class="trust-item">Прозрачные спецификации и честные ограничения.</div>
-<div class="trust-item">Регламенты настройки, чек‑листы и документация.</div>
+          <div class="trust-item">Регламенты настройки, чек‑листы и документация.</div>
           <div class="trust-item">Пилот и демо до принятия решения.</div>
           <div class="trust-item">Поддержка внедрения и удаленная диагностика.</div>
           <div class="trust-item">NDA и конфиденциальность проектов.</div>
@@ -701,7 +263,7 @@
             <div>
               <h3>Подготовка процесса</h3>
               <p>Библиотека компонентов, профили и питатели.</p>
-            </div>
+</div>
           </div>
           <div class="step">
             <div class="step-index">03</div>
@@ -735,27 +297,7 @@
       </div>
     </section>
 
-    <section class="section alt" id="software" aria-labelledby="software-title">
-      <div class="container">
-        <h2 id="software-title">ПО и интеграции</h2>
-        <p>Поддерживаем интеграцию в производственный процесс и подготовку производства. Форматы и сценарии согласуются с вашей инфраструктурой.</p>
-        <div class="cards">
-          <article class="card">
-            <h3>Импорт данных</h3>
-            <p>[уточнить форматы]</p>
-          </article>
-          <article class="card">
-            <h3>Экспорт отчетов</h3>
-            <p>[уточнить]</p>
-          </article>
-          <article class="card">
-            <h3>Интеграции</h3>
-            <p>[уточнить]</p>
-          </article>
-        </div>
-      </div>
-    </section>
-<section class="section" id="economics" aria-labelledby="economics-title">
+    <section class="section" id="economics" aria-labelledby="economics-title">
       <div class="container">
         <h2 id="economics-title">Экономика и окупаемость</h2>
         <p>Считаем эффект от сокращения трудозатрат, снижения ошибок и ускорения выпуска серий.</p>
@@ -810,7 +352,7 @@
             <p>Стабильная повторяемость при разных заказах.</p>
           </article>
           <article class="card">
-            <h3>Учебная лаборатория</h3>
+<h3>Учебная лаборатория</h3>
             <p>Практикумы и методические материалы.</p>
           </article>
           <article class="card">
@@ -833,3 +375,195 @@
             <p>Прорабатываем задачу на уровне компонентов, сценариев сборки, ограничений линии и требований к качеству.</p>
           </article>
           <article class="card">
+            <h3>Прозрачная спецификация</h3>
+            <p>Фиксируем реальные параметры, ограничения и условия применения без перегруженных маркетинговых формулировок.</p>
+          </article>
+          <article class="card">
+            <h3>Поддержка внедрения</h3>
+            <p>Помогаем с пилотом, обучением команды, регламентами эксплуатации и удаленной диагностикой после поставки.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="cta-head">
+          <h2 id="contact-title">Свяжитесь с нами</h2>
+          <p>Подготовим КП, согласуем пилот и дадим рекомендации по процессу.</p>
+        </div>
+        <div class="forms-grid">
+          <form class="form-card" data-form="demo">
+            <h3>Запросить демонстрацию</h3>
+            <p>Опишите компоненты и объем партии — подготовим сценарий демо.</p>
+            <label>Имя <input type="text" name="name" required /></label>
+            <label>Компания <input type="text" name="company" required /></label>
+            <label>Email <input type="email" name="email" required /></label>
+            <label>Телефон <input type="tel" name="phone" required /></label>
+            <label class="checkbox">
+              <input type="checkbox" name="consent" required />
+              <span>Согласен на обработку данных по политике конфиденциальности.</span>
+            </label>
+            <button class="btn btn-primary" type="submit">Отправить заявку</button>
+            <p class="form-note">Мы отвечаем в рабочее время и не передаем данные третьим лицам без согласия.</p>
+            <div class="form-status" role="status"></div>
+          </form>
+
+          <form class="form-card" data-form="cp">
+            <h3>КП под ваши требования</h3>
+            <p>Укажем комплектацию, сроки и условия поставки.</p>
+            <label>Имя <input type="text" name="name" required /></label>
+            <label>Компания <input type="text" name="company" required /></label>
+            <label>Email <input type="email" name="email" required /></label>
+            <label>Телефон <input type="tel" name="phone" required /></label>
+            <label class="checkbox">
+              <input type="checkbox" name="consent" required />
+              <span>Согласен на обработку данных по политике конфиденциальности.</span>
+            </label>
+            <button class="btn btn-secondary" type="submit">Получить КП</button>
+            <p class="form-note">Информация носит предварительный характер и уточняется после согласования спецификации.</p>
+            <div class="form-status" role="status"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+<div>
+        <a class="brand-name footer-brand-link" href="#hero">TIORA</a>
+        <p>Настольные SMD‑расстановщики для серийной сборки и R&D.</p>
+      </div>
+      <div>
+        <p><strong>Контакты</strong></p>
+        <p><a href="tel:+79630901121">+7 963 090 11 21</a></p>
+      </div>
+      <div>
+        <p><strong>Юридическая информация</strong></p>
+        <p>Политика конфиденциальности</p>
+        <p>Согласие на обработку данных</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const header = document.querySelector('.site-header');
+      const navLinks = Array.from(document.querySelectorAll('.nav a'));
+      const sections = Array.from(document.querySelectorAll('main section[id]'));
+
+      const handleScroll = () => {
+        if (!header) return;
+        header.classList.toggle('is-sticky', window.scrollY > 12);
+      };
+
+      handleScroll();
+      window.addEventListener('scroll', handleScroll, { passive: true });
+
+      if (sections.length && navLinks.length) {
+        const map = new Map(navLinks.map(link => [link.getAttribute('href')?.slice(1), link]));
+        const observer = new IntersectionObserver(
+          entries => {
+            entries.forEach(entry => {
+              const id = entry.target.getAttribute('id');
+              const link = map.get(id);
+              if (!link) return;
+              if (entry.isIntersecting) {
+                navLinks.forEach(item => item.classList.remove('active'));
+                link.classList.add('active');
+              }
+            });
+          },
+          { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+        );
+        sections.forEach(section => observer.observe(section));
+      }
+
+      const forms = Array.from(document.querySelectorAll('form[data-form]'));
+      forms.forEach(form => {
+        const status = form.querySelector('.form-status');
+        const requiredFields = Array.from(form.querySelectorAll('[required]'));
+
+        const clearErrors = () => {
+          requiredFields.forEach(field => field.classList.remove('is-invalid'));
+        };
+
+        form.addEventListener('input', event => {
+          if (event.target instanceof HTMLInputElement) {
+            event.target.classList.remove('is-invalid');
+          }
+          if (status) {
+            status.textContent = '';
+            status.className = 'form-status';
+          }
+        });
+
+        form.addEventListener('submit', event => {
+          event.preventDefault();
+          clearErrors();
+          let valid = true;
+
+          requiredFields.forEach(field => {
+            const isCheckbox = field.type === 'checkbox';
+            const isValid = isCheckbox ? field.checked : Boolean(field.value.trim());
+            if (!isValid) {
+              field.classList.add('is-invalid');
+              valid = false;
+            }
+          });
+
+          if (!status) return;
+
+          if (valid) {
+            status.textContent = 'Спасибо! Заявка получена, мы свяжемся в рабочее время.';
+            status.className = 'form-status success';
+            form.reset();
+          } else {
+            status.textContent = 'Проверьте обязательные поля и корректность данных.';
+            status.className = 'form-status error';
+          }
+        });
+      });
+
+      const calcButton = document.getElementById('roi-calc');
+      const output = document.getElementById('roi-output');
+
+      const toNumber = value => {
+        const parsed = Number.parseFloat(value);
+        return Number.isFinite(parsed) ? parsed : null;
+      };
+
+      const formatCurrency = value => new Intl.NumberFormat('ru-RU', {
+        style: 'currency',
+        currency: 'RUB',
+        maximumFractionDigits: 0
+      }).format(value);
+
+      if (calcButton && output) {
+        calcButton.addEventListener('click', () => {
+const volume = toNumber(document.getElementById('roi-volume')?.value);
+          const manual = toNumber(document.getElementById('roi-manual')?.value);
+          const machine = toNumber(document.getElementById('roi-machine')?.value);
+          const rate = toNumber(document.getElementById('roi-rate')?.value);
+          const defectReduction = toNumber(document.getElementById('roi-defect')?.value) ?? 0;
+          const defectCost = toNumber(document.getElementById('roi-defect-cost')?.value) ?? 0;
+
+          if (volume === null  manual === null  machine === null || rate === null) {
+            output.textContent = 'Заполните объем, время ручной установки, время на станке и ставку оператора.';
+            return;
+          }
+
+          const manualHours = (volume * manual) / 60;
+          const machineHours = (volume * machine) / 60;
+          const laborSavings = (manualHours - machineHours) * rate;
+          const defectSavings = (defectReduction / 100) * defectCost;
+          const total = Math.max(laborSavings + defectSavings, 0);
+
+          output.textContent = Оценка экономии в месяц: ${formatCurrency(total)};
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
